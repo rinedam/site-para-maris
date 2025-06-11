@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Feliz 2 Anos de Namoro & Dia dos Namorados 💕</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;700&family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- GSAP para animações -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <!-- Preloader melhorado -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="heart-loader">
+                <div class="heart-beat"></div>
+                <div class="heart-beat"></div>
+                <div class="heart-beat"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-letter">C</span>
+                <span class="loading-letter">a</span>
+                <span class="loading-letter">r</span>
+                <span class="loading-letter">r</span>
+                <span class="loading-letter">e</span>
+                <span class="loading-letter">g</span>
+                <span class="loading-letter">a</span>
+                <span class="loading-letter">n</span>
+                <span class="loading-letter">d</span>
+                <span class="loading-letter">o</span>
+                <span class="loading-letter">&nbsp;</span>
+                <span class="loading-letter">n</span>
+                <span class="loading-letter">o</span>
+                <span class="loading-letter">s</span>
+                <span class="loading-letter">s</span>
+                <span class="loading-letter">o</span>
+                <span class="loading-letter">&nbsp;</span>
+                <span class="loading-letter">a</span>
+                <span class="loading-letter">m</span>
+                <span class="loading-letter">o</span>
+                <span class="loading-letter">r</span>
+                <span class="loading-letter">.</span>
+                <span class="loading-letter">.</span>
+                <span class="loading-letter">.</span>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partículas de fundo -->
+    <div id="particles-js"></div>
+
+    <!-- Partículas de corações flutuantes -->
+    <div id="floating-hearts"></div>
+
+    <!-- Barra de progresso de leitura -->
+    <div class="reading-progress">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Header / Início melhorado -->
+    <header id="inicio" class="section hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="floating-elements">
+                <div class="floating-heart"></div>
+                <div class="floating-heart"></div>
+                <div class="floating-heart"></div>
+                <div class="floating-star"></div>
+                <div class="floating-star"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Feliz 2 Anos de Namoro</span>
+                    <span class="title-line">&</span>
+                    <span class="title-line">Dia dos Namorados</span>
+                </h1>
+                
+                <div class="hero-subtitle">
+                    <p class="typewriter-text">Uma celebração do nosso amor infinito...</p>
+                </div>
+
+                <div class="header-content">
+                    <div class="profile-section">
+                        <div class="profile-image">
+                            <div class="image-glow"></div>
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <p>Nossa Foto</p>
+                            </div>
+                            <div class="floating-hearts-around">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="countdown-section">
+                        <div class="countdown-container">
+                            <h2 class="countdown-title">Contagem para o Dia dos Namorados</h2>
+                            <div id="countdown" class="countdown">
+                                <div class="time-block">
+                                    <div class="time-number" id="days">00</div>
+                                    <div class="time-label">Dias</div>
+                                </div>
+                                <div class="time-separator">:</div>
+                                <div class="time-block">
+                                    <div class="time-number" id="hours">00</div>
+                                    <div class="time-label">Horas</div>
+                                </div>
+                                <div class="time-separator">:</div>
+                                <div class="time-block">
+                                    <div class="time-number" id="minutes">00</div>
+                                    <div class="time-label">Minutos</div>
+                                </div>
+                                <div class="time-separator">:</div>
+                                <div class="time-block">
+                                    <div class="time-number" id="seconds">00</div>
+                                    <div class="time-label">Segundos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <a href="#nossa-historia" class="scroll-btn">
+                        <span class="scroll-text">Iniciar Nossa Jornada</span>
+                        <div class="scroll-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nossa História melhorada -->
+    <section id="nossa-historia" class="section timeline-section">
+        <div class="section-background">
+            <div class="floating-petals"></div>
+        </div>
+        
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">✨</span>
+                Nossa História
+                <span class="title-decoration">✨</span>
+            </h2>
+            
+            <div class="timeline">
+                <div class="timeline-line">
+                    <div class="timeline-progress"></div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <p>Momento 1</p>
+                            </div>
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-text">
+                            <h3>Nosso Primeiro Encontro</h3>
+                            <p class="timeline-date">O início de tudo</p>
+                            <p class="timeline-description">Foi naquele café, numa tarde de outono. Você estava usando aquela blusa que combina perfeitamente com seus olhos. Conversamos por horas que pareceram minutos. Naquele dia, algo dentro de mim já sabia que você seria especial em minha vida.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <i class="fas fa-kiss"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <p>Momento 2</p>
+                            </div>
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-text">
+                            <h3>Nosso Primeiro Beijo</h3>
+                            <p class="timeline-date">Um momento mágico</p>
+                            <p class="timeline-description">Sob o céu estrelado, com a lua como testemunha, nossos lábios se encontraram pela primeira vez. Um momento de pura magia que ficará para sempre gravado em minha memória. Foi quando tive certeza que queria muito mais momentos assim ao seu lado.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <i class="fas fa-heart-circle-plus"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <p>Momento 3</p>
+                            </div>
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-text">
+                            <h3>Pedido de Namoro</h3>
+                            <p class="timeline-date">O começo oficial</p>
+                            <p class="timeline-description">Com o coração acelerado e as mãos trêmulas, preparei aquela surpresa especial para te pedir em namoro. Seu "sim" foi o som mais bonito que já ouvi. Naquele dia, começamos oficialmente nossa jornada juntos, sem imaginar todas as maravilhas que estavam por vir.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <p>Momento 4</p>
+                            </div>
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-text">
+                            <h3>Nossa Primeira Viagem</h3>
+                            <p class="timeline-date">Explorando juntos</p>
+                            <p class="timeline-description">Malas prontas e corações cheios de expectativa, embarcamos em nossa primeira aventura juntos. Descobrimos não apenas novos lugares, mas também novas facetas um do outro. Foi quando percebi que queria explorar o mundo inteiro com você ao meu lado.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <i class="fas fa-calendar-heart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <p>Momento 5</p>
+                            </div>
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-text">
+                            <h3>Nosso Primeiro Ano</h3>
+                            <p class="timeline-date">365 dias de amor</p>
+                            <p class="timeline-description">Celebramos 365 dias de amor, aprendizado e crescimento. Um ano repleto de descobertas, desafios superados e momentos inesquecíveis. O primeiro marco de muitos que ainda viriam em nossa história de amor.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker special">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="timeline-content special">
+                        <div class="timeline-image">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <p>Momento 6</p>
+                            </div>
+                            <div class="image-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-text">
+                            <h3>Hoje - Dois Anos Juntos</h3>
+                            <p class="timeline-date">12 de junho de 2025</p>
+                            <p class="timeline-description">Dois anos depois, nosso amor só cresceu e amadureceu. Cada desafio nos fortaleceu, cada alegria foi multiplicada porque estávamos juntos. Hoje celebramos não apenas o tempo, mas a qualidade de cada momento compartilhado. E o melhor ainda está por vir!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Memórias melhorada -->
+    <section id="galeria" class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">📸</span>
+                Galeria de Memórias
+                <span class="title-decoration">📸</span>
+            </h2>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="momentos">Momentos</button>
+                <button class="filter-btn" data-filter="viagens">Viagens</button>
+                <button class="filter-btn" data-filter="especiais">Especiais</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="momentos">
+                    <div class="gallery-image">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <p>Foto 1</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="gallery-btn" data-action="heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="viagens">
+                    <div class="gallery-image">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <p>Foto 2</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="gallery-btn" data-action="heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="especiais">
+                    <div class="gallery-image">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <p>Foto 3</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="gallery-btn" data-action="heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="momentos">
+                    <div class="gallery-image">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <p>Foto 4</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="gallery-btn" data-action="heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="viagens">
+                    <div class="gallery-image">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <p>Foto 5</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="gallery-btn" data-action="heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="especiais">
+                    <div class="gallery-image">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <p>Foto 6</p>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn" data-action="view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="gallery-btn" data-action="heart">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Momentos Futuros melhorados -->
+    <section id="futuro" class="section future-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">🌟</span>
+                Nosso Futuro Juntos
+                <span class="title-decoration">🌟</span>
+            </h2>
+            
+            <div class="future-grid">
+                <div class="dream-card">
+                    <div class="dream-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="dream-content">
+                        <h3>Nosso Lar</h3>
+                        <p>Imagino um lugar acolhedor que possamos chamar de nosso. Um espaço onde construiremos memórias, compartilharemos sonhos e criaremos nosso próprio mundo. Um lar não feito apenas de paredes e móveis, mas de amor, respeito e cumplicidade.</p>
+                    </div>
+                    <div class="dream-glow"></div>
+                </div>
+                
+                <div class="dream-card">
+                    <div class="dream-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="dream-content">
+                        <h3>Viagens</h3>
+                        <p>Há tantos lugares que quero conhecer com você! Praias paradisíacas, montanhas imponentes, cidades históricas... O mundo é vasto, e quero explorá-lo ao seu lado, criando memórias em cada canto que visitarmos, colecionando pores do sol em diferentes horizontes.</p>
+                    </div>
+                    <div class="dream-glow"></div>
+                </div>
+                
+                <div class="dream-card">
+                    <div class="dream-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="dream-content">
+                        <h3>Amor Eterno</h3>
+                        <p>Meu compromisso é fazer nosso amor crescer e se renovar a cada dia. Quero envelhecer ao seu lado, de mãos dadas, olhando para trás com orgulho da história que construímos juntos e olhando para frente com a certeza de que o melhor ainda está por vir.</p>
+                    </div>
+                    <div class="dream-glow"></div>
+                </div>
+                
+                <div class="dream-card">
+                    <div class="dream-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="dream-content">
+                        <h3>Realizações</h3>
+                        <p>Sonho em celebrar cada conquista sua como se fosse minha, e compartilhar minhas vitórias com você. Juntos, podemos alcançar tudo o que desejamos, apoiando um ao outro em cada passo do caminho, sendo a força um do outro nos momentos de dificuldade.</p>
+                    </div>
+                    <div class="dream-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mensagem Final melhorada -->
+    <section id="mensagem-final" class="section final-section">
+        <div class="final-background">
+            <div class="stars-field"></div>
+        </div>
+        
+        <div class="container">
+            <div class="final-content">
+                <h2 class="final-title">Te Amo Infinitamente</h2>
+                
+                <div class="love-letter">
+                    <div class="letter-content">
+                        <p class="letter-greeting">Meu amor,</p>
+                        
+                        <div class="letter-text">
+                            <p>Meu amor,
+
+Nem acredito que já se passaram dois anos desde que a gente resolveu encarar essa jornada juntos. Cada momento do seu lado foi um presente e eu guardo tudo com um carinho enorme.
+
+Você trouxe uma luz pra minha vida que eu nem sabia que existia. Seu sorriso ilumina tudo, ouvir sua voz me acalma e o seu amor é o que me dá força pra seguir em frente.
+
+Quando estou feliz, comemorar com você é muito melhor. Quando estou pra baixo, seu abraço é o meu porto seguro. E quando duvido de mim, você é quem me lembra do meu valor. Você me completa de um jeito que nem sei explicar direito.
+
+Dois anos pode não parecer muito tempo, mas pra mim foi um período incrível de parceria, crescimento e um amor que só aumenta. E o melhor de tudo é saber que a nossa história está só começando. Peço desculpas por todas as coisas erradas que acabei cometendo durante esse todo tempo juntos, mas saiba que cada erro foi uma lição que aprendi por você e com você.
+                            </p>
+                        </div>
+                        
+                        <div class="letter-signature">
+                            <p class="signature-text">Com todo meu amor,</p>
+                            <p class="signature-name">Seu namorado Gusteivo.</p>
+                            <div class="signature-hearts">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="final-actions">
+                    <button class="btn-restart" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i class="fas fa-redo"></i>
+                        <span>Reviver Nossa História</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controles flutuantes -->
+    <div class="floating-controls">
+        <!-- Controle de música -->
+        <div class="music-control">
+            <button id="music-toggle" class="control-btn">
+                <i class="fas fa-music"></i>
+            </button>
+            <div class="volume-control">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volume-slider" min="0" max="100" value="50">
+            </div>
+        </div>
+        
+        <!-- Botão de voltar ao topo -->
+        <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Lightbox para galeria -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-image">
+                <img src="" alt="Imagem ampliada">
+            </div>
+            <div class="lightbox-nav">
+                <button class="lightbox-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Feito com <i class="fas fa-heart"></i> para celebrar nosso amor</p>
+                <p class="footer-date">12 de junho de 2025 - 2 Anos de Namoro</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
