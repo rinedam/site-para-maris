@@ -1052,6 +1052,47 @@ function initLightbox() {
                 break;
         }
     });
+    
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('.lightbox-image img');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const viewBtns = document.querySelectorAll('.gallery-btn[data-action="view"]');
+
+        // Abrir lightbox
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const galleryItem = this.closest('.gallery-item');
+                const img = galleryItem.querySelector('.photo-placeholder img');
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Previne scroll
+            });
+        });
+
+        // Fechar lightbox
+        closeBtn.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restaura scroll
+        });
+
+        // Fechar com Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Fechar clicando fora da imagem
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
 }
 
 function openLightbox(galleryItem) {
